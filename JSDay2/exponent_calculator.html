@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp Calci</title>
+</head>
+<body>
+    <input type="number" name="" id="num1" placeholder="Enter First Number">
+    <input type="number" name="" id="num2" placeholder="Enter Second Number">
+    <hr>
+    <button id="btn">Click here to find the exponent!</button>
+    <p>Output</p>
+</body>
+</html>
+<script>
+    document.querySelector("#btn").addEventListener("click", expCalci);
+    function expCalci(){
+        var a = document.querySelector("#num1").value;
+        var b = document.querySelector("#num2").value;
+        var output = 1;
+        for(var i=0; i<b; i++)
+        {
+            output *= a;
+        }
+        alert(document.querySelector("p").innerText = output);
+    }
+</script>

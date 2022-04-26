@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 80%;
+            height: 400px;
+            margin: auto;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 30px;
+
+        }
+        #container>div{
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        p+div{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        img+p{
+            text-align: center;
+            color: grey;
+        }
+        h3+p{
+            text-decoration: line-through;
+            color: grey;
+        }
+        div>img:nth-child(1){
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+    var data = [
+    {imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",name:"LATEST MEN'S SNEAKER",price:"$25.00",strikedOffPrice:"$95.00"},
+    {imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",name:"LATEST MEN'S SNEAKER",price:"$35.00",strikedOffPrice:"$100.00"},
+    {imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",name:"LATEST MEN'S SNEAKER",price:"$35.00",strikedOffPrice:"$100.00"},
+    {imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",name:"LATEST MEN'S SNEAKER",price:"$35.00",strikedOffPrice:"$100.00"}]
+
+    data.map(function(el){
+    var box = document.createElement("div");
+    // console.log(box);
+    var image = document.createElement("img");
+    image.setAttribute("src",el.imgUrl);
+    var Name = document.createElement("p");
+    Name.innerText = el.name;
+    var pBox = document.createElement("div");
+    var Price = document.createElement("h3");
+    Price.innerText = el.price;
+    var Offprice = document.createElement("p");
+    Offprice.innerText = el.strikedOffPrice;
+    pBox.append(Price,Offprice);
+    box.append(image,Name,pBox);
+    document.querySelector("#container").append(box);
+})
+</script>

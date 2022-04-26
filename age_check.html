@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <select id="gender">
+        <option value="">Select Gender</option>
+        <option value="Male">M</option>
+        <option value="Female">F</option>
+    </select>
+    <input id="Age" type="number" placeholder="Enter your Age" value="">
+    <button onclick="checkAge()">submit</button>
+    <p id="result">Show Result Here</p>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    function checkAge(){
+        var age = document.getElementById("Age").value
+        if(age>18){
+            alert(document.getElementById("result").innerText=("You can drive in India!"));
+        }else if(age<18)
+        {
+            document.getElementById("result").innerText=("You can't drive in India"); 
+        }else{
+            document.getElementById("result").innerText=("You are just old enough to drive in India!");
+        }
+        
+    }
+</script>

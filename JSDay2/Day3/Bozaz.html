@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container>form{
+            width: 30%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(5,auto);
+            gap: 10px;
+        }
+        form>input,select{
+            padding:5px 0px 5px 0px;
+        }
+        h2{
+            text-align: center;
+        }
+        #products{
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+        #products>div{
+            width: 20%;
+        }
+        button{
+            background-color: red;
+            color: white;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Add Products Here</h2>
+        <form action="">
+            <select name="" id="category">
+                <option value="">Category</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Home Appliance">Home Appliance</option>
+                <option value="Books">Books</option>
+            </select>
+            <input type="text" name="" id="Ptitle" placeholder="Enter Title">
+            <input type="text" name="" id="Pdesp" placeholder="Enter Description">
+            <input type="number" name="" id="Pprice" placeholder="Enter Price">
+            <input type="Submit" name="" id="sub">
+        </form>
+        <div id="products"></div>
+        
+    </div>
+</body>
+</html>
+
+
+<script>
+    document.querySelector("form").addEventListener("submit", myFunction);
+    
+    function myFunction(){
+        event.preventDefault();
+       var category = document.querySelector("#category").value;
+       var productTitle = document.querySelector("#Ptitle").value;
+       var productDes = document.querySelector("#Pdesp").value;
+       var productPrice = document.querySelector("#Pprice").value;
+    //    console.log(category,prodTitle,productDes,productPrice)
+       var box = document.createElement("div");
+        var H4 = document.createElement("h4");
+        H4.innerText = category;
+        var P1 = document.createElement("p");
+        P1.innerText = productTitle;
+        var P2 = document.createElement("p");
+        P2.innerText = productDes;
+        var P3 = document.createElement("p");
+        P3.innerText = productPrice;
+        var button = document.createElement("button");
+        button.innerText = "DELETE";
+        button.addEventListener("click", delRow);
+        box.append(H4,P1,P2,P3,button);
+        document.querySelector("#products").append(box);
+        
+
+    }
+    function delRow(){
+        event.target.parentNode.remove();
+    }
+
+        
+   
+    
+</script>

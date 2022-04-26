@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+        button{
+            padding: 20px 25px 20px 25px;
+            font-size: 18px;
+            font-weight: bolder;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    buttons = [{headingName:"Primary",color:"white",bgColor:"blue"},
+            {headingName:"Secondary",color:"white",bgColor:"grey"},
+            {headingName:"Success",color:"white",bgColor:"green"},
+            {headingName:"Danger",color:"white",bgColor:"red"},
+            {headingName:"Warning",color:"black",bgColor:"yellow"},
+            {headingName:"Info",color:"white",bgColor:"cyan"},
+            {headingName:"Light",color:"black",bgColor:"white"},
+            {headingName:"Dark",color:"white",bgColor:"black"},
+            {headingName:"Link",color:"blue",bgColor:"white"}]
+
+            buttons.map(function(el){
+                var btn = document.createElement("button");
+                btn.innerText = el.headingName;
+                btn.style.color = el.color;
+                btn.style.backgroundColor = el.bgColor;
+                document.querySelector("body").append(btn);
+            })
+</script>

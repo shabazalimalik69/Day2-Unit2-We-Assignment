@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: teal;
+            text-align: center;
+        }
+        h1+div{
+            width: 20%;
+            height:400px;
+            /* border: 1px solid red; */
+           margin: auto;
+           box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+           padding-top: 10px;
+        }
+        #screen{
+            width: 90%;
+            height: 45px;
+            /* border: 1px solid gold; */
+            border-radius: 10px;
+            margin: auto;
+            margin-top: 30px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            /* margin-bottom: 50px; */
+            
+        }
+        #screen+div{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            grid-template-rows: repeat(4,50px);
+            gap:20px;
+            width: 90%;
+            margin: auto;
+            margin-top: 30px;
+        }
+        #screen+div>div{
+            /* border: 1px solid green; */
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            font-weight: bold;
+        }
+        .blk{
+            background-color: black;
+            color: white;
+        }
+        #Red{
+            background-color: red;
+            color: white;
+        }
+        #screen+div>div:hover{
+            background-color: brown;
+        }
+        #screen:hover{
+            background-color: grey;
+        }
+        #screen{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bolder;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Masai Calculator</h1>
+    <div>
+        <div id="screen"></div>
+        <div id="Keyboard">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div class="blk">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div class="blk">-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div class="blk">*</div>
+            <div id="Red">C</div>
+            <div>0</div>
+            <div class="blk">=</div>
+            <div class="blk">/</div>
+        </div>
+        
+    </div>
+</body>
+</html>
+<script>
+    var keys = document.querySelectorAll("#Keyboard>div");
+    var output = "";
+//     for (var i = 0; i < keys.length; i++) {
+//     keys[i].addEventListener("click", myCalci);
+//   }
+       keys.forEach(function(el){
+           el.addEventListener("click", myCalci)
+       })
+    function myCalci(){
+            var Number = event.target.innerText;
+            if(Number=="C")
+            {
+                output = "";
+                document.querySelector("#screen").innerText="";
+            }else if(Number=="="){
+                console.log(eval(output));
+                document.querySelector("#screen").innerText=eval(output);  
+            }else{
+                output+=Number;
+                document.querySelector("#screen").innerText=output;
+            }
+        }
+
+
+
+
+</script>

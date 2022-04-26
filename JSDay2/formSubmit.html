@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Sub{
+            padding: 10px 15px 10px 15px;
+            background-color: rgb(180, 67, 67);
+            color: white;
+            border-radius: 10px;
+        }
+        #Sub:hover{
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <input type="text" name="" id="Name" placeholder="Enter Full Name">
+        <input type="number" name="" id="Age" placeholder="Enter Age">
+        <select name="" id="Gender">
+            <option value="">Select Gender</option>
+            <option value="Male">M</option>
+            <option value="Female">F</option>
+        </select>
+        <input type="text" name="" id="Mail" placeholder="Enter Email">
+        <input type="number" name="" id="Mobile" placeholder="Enter Mobile">
+        <hr>
+        <input type="Submit" name="" id="Sub">
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit", Details);
+    function Details(){
+        event.preventDefault();
+         var name = document.querySelector("#Name").value;
+         var age = document.querySelector("#Age").value;
+         var gender = document.querySelector("#Gender").value;
+         var email= document.querySelector("#Mail").value;
+         var mobile = document.querySelector("#Mobile").value;
+         console.log(name,age,gender,email,mobile);
+    }
+</script>
