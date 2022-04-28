@@ -34,31 +34,7 @@
         <div><a href="backend.html" target="_blank">Backend</a></div>
         <div><a href="frontend.html" target="_blank">Frontend</a></div>
     </div>
-    <form id="InvestForm">
-         <input type="text" name="" id="Image" placeholder="Enter Image Link">
-         <input type="text" name="" id="pName" placeholder="Enter Name">
-         <input type="text" name="" id="Designation" placeholder="Enter Designation">
-         <input type="text" name="" id="Logo" placeholder="Enter Logo Link">
-         <input type="submit">
-    </form>
+    
 </body>
 </html>
 
-<script>
-    document.querySelector("#InvestForm").addEventListener("submit", navFun);
-     var InvestArray = JSON.parse(localStorage.getItem("InvestData")) || [];
-     console.log(InvestArray)
-     
-    function navFun(){
-        event.preventDefault();
-      InvestObject ={
-          InvestImg:InvestForm.Image.value,
-          InvestName:InvestForm.pName.value,
-          InvestDesig:InvestForm.Designation.value,
-          InvestLogo:InvestForm.Logo.value
-      }
-      InvestArray.push(InvestObject);
-      localStorage.setItem("InvestData",JSON.stringify(InvestArray))
-    }
-    
-</script>
